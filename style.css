@@ -1,0 +1,75 @@
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            height: 100vh;
+            background: #979696;
+
+        }
+
+        model-viewer {
+            flex-grow: 1;
+            width: 100%;
+            height: 100%;
+            background-color: #eee;
+        }
+
+        /* 1. The Dot (hotspot) */
+        .hotspot {
+            background: rgba(22, 123, 255, 0.4);
+            /* 0.4 sets the background to 40% opacity */
+            border-radius: 50%;
+            border: 2px solid #ffffff80;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+            padding: 0;
+            position: relative;
+            /* Essential for positioning the text */
+            transform: scale(calc(1 / var(--min-hotspot-opacity, 1)));
+        }
+
+        .hotspot:hover {
+            background: rgb(22, 123, 255);
+            /* Becomes 100% solid on hover */
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        /* 2. The Text (Annotation) */
+        .annotation {
+            background: #333;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 16px;
+            padding: 8px 12px;
+            position: absolute;
+
+            /* Positioned above the dot */
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            /* Layering logic */
+            z-index: 999;
+            /* This forces the text to stay in front of the dot */
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease-in-out;
+
+            /* Optional: Adds a slight border to help it stand out from the 3D model */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: max-content;
+            /* يخلي العرض على قد الكلام بالضبط بدون ما ينزل سطر جديد */
+            max-width: 250px;
+            /* اختياري: حد أقصى للعرض عشان ما يخرج عن الشاشة في الجوالات */
+            white-space: normal;
+            /* يمنع النص من النزول لسطر جديد نهائياً */
+            text-align: center;
+            /* يخلي النص في النص */
+        }
+
+        /* 3. Show on Hover */
+        .hotspot:hover .annotation {
+            opacity: 1;
+        }
