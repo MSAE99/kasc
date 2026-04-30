@@ -15,7 +15,7 @@
         ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral"
         environment-image="scythian_tombs_2_1k.hdr" skybox-image="scythian_tombs_2_1k.hdr" shadow-intensity="1"
         min-camera-orbit="auto 0deg 1000m" camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m"
-        min-field-of-view="1deg" poster="Ministry-of-Sports-1.png" interaction-prompt="none">
+        min-field-of-view="1deg" poster="Ministry-of-Sports-1.png" >
         <script>
             const viewer = document.getElementById("model");
 
@@ -24,9 +24,9 @@
 
             // تحديد المودل
             if (isMobile) {
-                viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
+                viewer.src = "model/045_King_Abdullah_Stadium-v2.glb";
             } else {
-                viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
+                viewer.src = "model/045_King_Abdullah_Stadium-v2.glb";
             }
         </script>
         <button class="hotspot" slot="hotspot-2"
