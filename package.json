@@ -1,0 +1,24 @@
+{
+  "name": "kasc",
+  "version": "1.0.0",
+  "description": "King Abdullah Sports City 3D Model Viewer",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MSAE99/kasc.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MSAE99/kasc/issues"
+  },
+  "homepage": "https://github.com/MSAE99/kasc#readme",
+  "dependencies": {
+    "@vercel/speed-insights": "^2.0.0"
+  }
+}
