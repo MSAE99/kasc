@@ -11,11 +11,24 @@
 </head>
 
 <body>
-    <model-viewer src="model/045_King_Abdullah_Stadium-v1.glb" ios-src="model/045_King_Abdullah_Stadium-v.usdz" ar ar-modes="webxr scene-viewer quick-look" camera-controls
-        tone-mapping="neutral" environment-image="scythian_tombs_2_1k.hdr" skybox-image="scythian_tombs_2_1k.hdr"  shadow-intensity="1"
-        min-camera-orbit="auto 0deg 1000m" camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m" min-field-of-view="1deg" poster="Ministry-of-Sports-1.png" >
+    <model-viewer id="model" ios-src="model/045_King_Abdullah_Stadium-v.usdz" ar
+        ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral"
+        environment-image="scythian_tombs_2_1k.hdr" skybox-image="scythian_tombs_2_1k.hdr" shadow-intensity="1"
+        min-camera-orbit="auto 0deg 1000m" camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m"
+        min-field-of-view="1deg" poster="Ministry-of-Sports-1.png" interaction-prompt="none">
+        <script>
+            const viewer = document.getElementById("model");
 
+            // كشف إذا الجهاز جوال
+            const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
 
+            // تحديد المودل
+            if (isMobile) {
+                viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
+            } else {
+                viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
+            }
+        </script>
         <button class="hotspot" slot="hotspot-2"
             data-position="0.6173798958797647m 0.7987781173364965m 533.2478553924198m"
             data-normal="-0.8350504645920545m 0.5501733254927229m 0.00018303243535843376m"
