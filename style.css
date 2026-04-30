@@ -3,7 +3,7 @@
             font-family: sans-serif;
             display: flex;
             height: 100vh;
-            background: #979696;
+            background: #5b5f5c;
 
         }
 
@@ -11,7 +11,9 @@
             flex-grow: 1;
             width: 100%;
             height: 100%;
-            background-color: #eee;
+            background-color: #5b5f5c;
+            background-blend-mode: color-dodge;
+            
         }
 
         /* 1. The Dot (hotspot) */
