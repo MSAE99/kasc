@@ -13,9 +13,9 @@
 <body>
     <model-viewer id="model" ios-src="model/045_King_Abdullah_Stadium-v.usdz" ar
         ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral"
-        environment-image="scythian_tombs_2_1k.hdr" skybox-image="scythian_tombs_2_1k.hdr" shadow-intensity="1"
-        min-camera-orbit="auto 0deg 1000m" camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m"
-        min-field-of-view="1deg" poster="Ministry-of-Sports-1.png" >
+        environment-image="scythian_tombs_2_1k.hdr" shadow-intensity="1" min-camera-orbit="auto 0deg 1000m"
+        camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m" min-field-of-view="1deg"
+        poster="Ministry-of-Sports-1.png" near-plane="0.1m" far-plane="1000m" >
         <script>
             const viewer = document.getElementById("model");
 
@@ -26,8 +26,10 @@
             if (isMobile) {
                 viewer.src = "model/045_King_Abdullah_Stadium-v2.glb";
             } else {
-                viewer.src = "model/045_King_Abdullah_Stadium-v2.glb";
+                viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
             }
+
+
         </script>
         <button class="hotspot" slot="hotspot-2"
             data-position="0.6173798958797647m 0.7987781173364965m 533.2478553924198m"
@@ -58,7 +60,34 @@
             data-normal="-0.3774988492307572m 0.8456474490654438m 0.37732613309783064m"
             data-visibility-attribute="visible">
             <div class="annotation">Gate 2</div>
-        </button><button class="hotspot" slot="hotspot-13"
+        </button>
+        <button class="hotspot" slot="hotspot-12"
+            data-position="99.71222641933707m 1.0764128863859241m 74.74517324212616m"
+            data-normal="1.4957958553381903e-7m 0.999999999999977m -1.541839450837227e-7m"
+            data-visibility-attribute="visible">
+            <div class="annotation">Handicap's Entrance 1</div>
+        </button>
+
+        <button class="hotspot" slot="hotspot-70"
+            data-position="129.03110945832304m 1.0764144209153983m -20.411684507313566m"
+            data-normal="1.1461798366169985e-7m 0.9999999999999934m -1.4939876655151533e-8m"
+            data-visibility-attribute="visible">
+            <div class="annotation">Handicap's Entrance 2</div>
+        </button><button class="hotspot" slot="hotspot-72"
+            data-position="90.00207153442875m 1.076411529798861m -89.30167554091179m"
+            data-normal="1.1078317064502798e-7m 0.9999999999999856m -1.2889790292181882e-7m"
+            data-visibility-attribute="visible">
+            <div class="annotation">Handicap's Entrance 3</div>
+        </button>
+
+        <button class="hotspot" slot="hotspot-74"
+            data-position="-4.4157167575618175m 1.0764160749142775m -124.08549645130643m"
+            data-normal="-3.885855272107679e-9m 0.9999999999999942m -1.0870674804194364e-7m"
+            data-visibility-attribute="visible">
+            <div class="annotation">Handicap's Entrance 4</div>
+        </button>
+
+        <button class="hotspot" slot="hotspot-13"
             data-position="104.51492097501105m 1.076372648501433m 158.40445292070308m"
             data-normal="1.2244270151283415e-8m 0.9999999999999986m -5.3520916051587886e-8m"
             data-visibility-attribute="visible">
@@ -381,11 +410,6 @@
                 2 Fire Fighting Jockey Pumps including Panel<br>
                 80 Fire Hose Reel/Rack Cabinet<br>
                 9 Fire Hydrant</div>
-        </button><button class="hotspot" slot="hotspot-12"
-            data-position="99.71222641933707m 1.0764128863859241m 74.74517324212616m"
-            data-normal="1.4957958553381903e-7m 0.999999999999977m -1.541839450837227e-7m"
-            data-visibility-attribute="visible">
-            <div class="annotation">Handicap's Entrance 1</div>
         </button><button class="hotspot" slot="hotspot-63"
             data-position="101.26889963166963m 1.0764132018941268m 63.01337360199295m"
             data-normal="1.3372178010082308e-7m 0.9999999999999858m 1.0367953955510959e-7m"
@@ -396,35 +420,20 @@
             data-normal="1.0873624779184989e-7m 0.9999999999999942m -2.5802372613879884e-9m"
             data-visibility-attribute="visible">
             <div class="annotation">Ticket Booth 2</div>
-        </button><button class="hotspot" slot="hotspot-70"
-            data-position="129.03110945832304m 1.0764144209153983m -20.411684507313566m"
-            data-normal="1.1461798366169985e-7m 0.9999999999999934m -1.4939876655151533e-8m"
-            data-visibility-attribute="visible">
-            <div class="annotation">Handicap's Entrance 2</div>
-        </button><button class="hotspot" slot="hotspot-72"
-            data-position="90.00207153442875m 1.076411529798861m -89.30167554091179m"
-            data-normal="1.1078317064502798e-7m 0.9999999999999856m -1.2889790292181882e-7m"
-            data-visibility-attribute="visible">
-            <div class="annotation">Handicap's Entrance 3</div>
         </button><button class="hotspot" slot="hotspot-73"
             data-position="94.84087264943116m 1.076411601436348m -84.38837741905263m"
             data-normal="1.1708409258739859e-7m 0.9999999999999857m -1.221706741088305e-7m"
             data-visibility-attribute="visible">
             <div class="annotation">Ticket Booth 3</div>
-        </button><button class="hotspot" slot="hotspot-74"
-            data-position="-4.4157167575618175m 1.0764160749142775m -124.08549645130643m"
-            data-normal="-3.885855272107679e-9m 0.9999999999999942m -1.0870674804194364e-7m"
-            data-visibility-attribute="visible">
-            <div class="annotation">Handicap's Entrance 4</div>
         </button><button class="hotspot" slot="hotspot-77"
             data-position="-69.3633248270188m 1.0764139890670776m 104.45756740880847m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
-            <div class="annotation">Ticket Booth 4</div>
+            <div class="annotation">Ticket Booth 5</div>
         </button><button class="hotspot" slot="hotspot-78"
             data-position="-105.93492932690503m 1.0764121747901072m -66.89333621221203m"
             data-normal="-1.377851062721243e-7m 0.9999999999999855m -1.0035462459885911e-7m"
             data-visibility-attribute="visible">
-            <div class="annotation">Ticket Booth 5</div>
+            <div class="annotation">Ticket Booth 4</div>
         </button><button class="hotspot" slot="hotspot-79"
             data-position="0.6829728498915415m 1.0763814978768096m -222.6655768887049m"
             data-normal="0m 0.9999999999999984m -5.6964009682970136e-8m" data-visibility-attribute="visible">
