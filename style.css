@@ -16,6 +16,21 @@
 
         }
 
+        .parking-spot,
+        .security-spot {
+            display: block;
+        }
+
+        /* إظهار مواقف السيارات فقط عندما يكون الموديل لديه كلاس show-parking */
+        #model.show-parking .parking-spot {
+            display: none;
+        }
+
+        /* إظهار الكاميرات فقط عندما يكون الموديل لديه كلاس show-security */
+        #model.show-security .security-spot {
+            display: block;
+        }
+
         /* 1. The Dot (hotspot) */
         .hotspot {
             background: #ffffff9a;
@@ -38,6 +53,8 @@
             opacity: 0 !important;
             pointer-events: none !important;
         }
+
+
 
         /* 3. The Text (Annotation) */
         .annotation {
@@ -70,5 +87,69 @@
         .hotspot:hover {
             background: rgb(22, 123, 255);
             /* Becomes 100% solid on hover */
-            border: 2px solid rgb(255, 255, 255);
+
+        }
+
+        .sidebar-controls {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            /* ترتيب الأزرار تحت بعضها */
+            gap: 15px;
+            /* المسافة بين كل زر والآخر */
+            z-index: 20;
+            /* رقم مرتفع لضمان ظهورها فوق طبقة الموديل 3D */
+        }
+
+        /* 
+       تصميم الزر الفردي (Individual Button):
+       العرض والارتفاع متساويان (60px) مع border-radius: 50% لجعله دائرياً.
+       نستخدم cubic-bezier لإعطاء حركة "ارتداد" ناعمة عند تمرير الماوس.
+    */
+        .side-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+
+            background: #1a1a1a;
+            /* لون خلفية داكن ومهني */
+            color: white;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            /* وضع الأيقونة فوق النص */
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            /* يمنع أي محتوى داخلي من تشويه شكل الزر */
+            border: none !important;
+            /* لإزالة أي حدود تماماً */
+
+        }
+
+        /* تأثيرات التفاعل (Hover Effects) */
+        .side-btn:hover {
+            transform: scale(1.1) translateX(5px);
+            /* تكبير الزر وتحريكه قليلاً لليمين */
+            background: #0bc29d;
+            /* تغيير اللون للون "ثيم" تقني عند المرور */
+            color: #1a1a1a;
+
+        }
+
+        .side-btn.active {
+            background: #10a88a;
+            /* لون مشرق (الأخضر الفسفوري) */
+            color: #1a1a1a;
+            /* نص داكن للتباين */
+
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+            /* توهج خلف الزر */
+            opacity: 1;
+            transform: scale(1.05);
+            /* تكبير بسيط للزر المفعل */
         }

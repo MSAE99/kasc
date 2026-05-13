@@ -14,8 +14,8 @@
     <model-viewer id="model" ios-src="model/045_King_Abdullah_Stadium-v.usdz" ar
         ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral"
         environment-image="scythian_tombs_2_1k.hdr" shadow-intensity="1" min-camera-orbit="auto 0deg 1000m"
-        camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 1800m" min-field-of-view="1deg"
-        poster="Ministry-of-Sports-1.png" near-plane="0.1m" far-plane="1000m" >
+        camera-orbit="0.381deg 75deg 1300m" max-camera-orbit="auto 90deg 2200m" min-field-of-view="1deg"
+        poster="Ministry-of-Sports-1.png" near-plane="0.1m" far-plane="1500m">
         <script>
             const viewer = document.getElementById("model");
 
@@ -29,8 +29,40 @@
                 viewer.src = "model/045_King_Abdullah_Stadium-v1.glb";
             }
 
+            function toggleHotspots(type, btn) {
+                // تأكد أن id الموديل هنا مطابق لـ id الموديل في HTML
+                const viewer = document.getElementById("model");
 
+                if (!viewer) {
+                    console.error("لم يتم العثور على عنصر الموديل! تأكد من الـ id");
+                    return;
+                }
+
+                if (type === 'parking') {
+                    viewer.classList.toggle('show-parking');
+                    console.log("تم تبديل ظهور المواقف"); // للتأكد في الكونسول
+                } else if (type === 'security') {
+                    viewer.classList.toggle('show-security');
+                    console.log("تم تبديل ظهور الكاميرات");
+                    
+                }
+                btn.classList.toggle('active');
+            }
         </script>
+
+        <div class="sidebar-controls">
+
+            <!-- 
+      زر التحكم في "مواقف السيارات":
+      1. عند الضغط (onclick): ينفذ وظيفة toggleHotspots ويرسل لها كلمة 'parking'.
+      2. الكلاس 'side-btn': يعطيه الشكل الدائري والتصميم الموحد.
+    -->
+            <button class="side-btn" onclick="toggleHotspots('parking', this)" title="Hide parkings">
+                <span class="icon">🅿️</span> <!-- الأيقونة التعبيرية -->
+                <span class="label">Hide parkings</span> <!-- النص التوضيحي الصغير -->
+            </button>
+        </div>
+
         <button class="hotspot" slot="hotspot-2"
             data-position="0.6173798958797647m 0.7987781173364965m 533.2478553924198m"
             data-normal="-0.8350504645920545m 0.5501733254927229m 0.00018303243535843376m"
@@ -87,66 +119,66 @@
             <div class="annotation">Handicap's Entrance 4</div>
         </button>
 
-        <button class="hotspot" slot="hotspot-13"
+        <button class="hotspot parking-spot" slot="hotspot-13"
             data-position="104.51492097501105m 1.076372648501433m 158.40445292070308m"
             data-normal="1.2244270151283415e-8m 0.9999999999999986m -5.3520916051587886e-8m"
             data-visibility-attribute="visible">
             <div class="annotation">VIP 1 Parking: 128</div>
-        </button><button class="hotspot" slot="hotspot-15"
+        </button><button class="hotspot parking-spot" slot="hotspot-15"
             data-position="-102.18922991757904m 1.0763727365597333m 159.59835733212162m"
             data-normal="-1.2476524782272474e-8m 0.9999999999999986m -5.3498552438900165e-8m"
             data-visibility-attribute="visible">
             <div class="annotation">VIP 2 Parking: 130
             </div>
-        </button><button class="hotspot" slot="hotspot-16"
+        </button><button class="hotspot parking-spot" slot="hotspot-16"
             data-position="155.0778275990674m 1.0763700008391197m 99.22185813479382m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 71</div>
-        </button><button class="hotspot" slot="hotspot-18"
+        </button><button class="hotspot parking-spot" slot="hotspot-18"
             data-position="179.7995027434129m 1.0763700008392334m 32.78915622592734m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 17</div>
-        </button><button class="hotspot" slot="hotspot-20"
+        </button><button class="hotspot parking-spot" slot="hotspot-20"
             data-position="180.21256404735493m 1.0763700008387787m -34.29966924245812m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 92</div>
-        </button><button class="hotspot" slot="hotspot-21"
+        </button><button class="hotspot parking-spot" slot="hotspot-21"
             data-position="104.60535260787852m 1.0763700008392334m -147.53183625389326m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 119</div>
-        </button><button class="hotspot" slot="hotspot-22"
+        </button><button class="hotspot parking-spot" slot="hotspot-22"
             data-position="-37.15419376457281m 1.0763700008392334m -177.7239726430983m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 112</div>
-        </button><button class="hotspot" slot="hotspot-23"
+        </button><button class="hotspot parking-spot" slot="hotspot-23"
             data-position="-154.60800953615885m 1.0763700008392334m -96.13704557811289m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 130</div>
-        </button><button class="hotspot" slot="hotspot-24"
+        </button><button class="hotspot parking-spot" slot="hotspot-24"
             data-position="-176.3568618811886m 1.0763700008392334m 33.66307701095374m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A1 Parking: 0</div>
-        </button><button class="hotspot" slot="hotspot-25"
+        </button><button class="hotspot parking-spot" slot="hotspot-25"
             data-position="-177.0976400779476m 1.0763700008392334m -32.806726132526705m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 134</div>
-        </button><button class="hotspot" slot="hotspot-26"
+        </button><button class="hotspot parking-spot" slot="hotspot-26"
             data-position="-104.20320625922861m 1.0763700008392334m -146.21070950109436m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 154</div>
-        </button><button class="hotspot" slot="hotspot-27"
+        </button><button class="hotspot parking-spot" slot="hotspot-27"
             data-position="38.447306395124855m 1.0763700008392334m -176.67707657399225m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 138</div>
-        </button><button class="hotspot" slot="hotspot-28"
+        </button><button class="hotspot parking-spot" slot="hotspot-28"
             data-position="152.83219876616766m 1.0763700008392334m -95.32422057482208m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 158</div>
-        </button><button class="hotspot" slot="hotspot-29"
+        </button><button class="hotspot parking-spot" slot="hotspot-29"
             data-position="-150.94421594021355m 1.0763700008392334m 96.63882363833m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">A2 Parking: 72</div>
-        </button><button class="hotspot" slot="hotspot-30"
+        </button><button class="hotspot gate" slot="hotspot-30"
             data-position="148.37298745864337m 1.3563681469779567m 58.885655629606845m"
             data-normal="0.8240901667108304m -0.0000038043681350697757m 0.5664586455479718m"
             data-visibility-attribute="visible">
@@ -155,7 +187,7 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-31"
+        </button><button class="hotspot gate" slot="hotspot-31"
             data-position="-148.72576557805564m 1.0764079252464853m 59.11806692526777m"
             data-normal="-1.5977278502237961e-7m 0.9999999999999611m 2.2822558832605568e-7m"
             data-visibility-attribute="visible">
@@ -164,7 +196,7 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-32"
+        </button><button class="hotspot gate" slot="hotspot-32"
             data-position="148.46255143620397m 1.2629399059524076m -58.63086321992208m"
             data-normal="0.974654997899069m -0.0000010016478768692475m -0.22371328764595727m"
             data-visibility-attribute="visible">
@@ -173,7 +205,7 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-33"
+        </button><button class="hotspot gate" slot="hotspot-33"
             data-position="62.55094386849407m 1.0764093540835802m -139.35048521540227m"
             data-normal="6.300278496432081e-8m 0.9999999999999843m -1.656933894519573e-7m"
             data-visibility-attribute="visible">
@@ -182,7 +214,7 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-34"
+        </button><button class="hotspot gate" slot="hotspot-34"
             data-position="-62.723100006407236m 1.2345321104526192m -139.09649630024876m"
             data-normal="-0.5513155152415901m 0.000012471884510449086m -0.8342968311688306m"
             data-visibility-attribute="visible">
@@ -191,7 +223,7 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-35"
+        </button><button class="hotspot gate" slot="hotspot-35"
             data-position="-149.1215456995834m 1.0764080957058013m -58.09410427094758m"
             data-normal="-1.5977278502237961e-7m 0.9999999999999611m -2.2822558832605568e-7m"
             data-visibility-attribute="visible">
@@ -200,99 +232,99 @@
                 <br>Ticketing system<br>
                 Handshake by skidata
             </div>
-        </button><button class="hotspot" slot="hotspot-36"
+        </button><button class="hotspot parking-spot" slot="hotspot-36"
             data-position="235.86641641835843m 1.2056269645690918m 153.04011382936767m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 231</div>
-        </button><button class="hotspot" slot="hotspot-37"
+        </button><button class="hotspot parking-spot" slot="hotspot-37"
             data-position="275.6634609332756m 1.2056269645690918m -53.69187997283666m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 247</div>
-        </button><button class="hotspot" slot="hotspot-38"
+        </button><button class="hotspot parking-spot" slot="hotspot-38"
             data-position="161.6677799565897m 1.2056269645690918m -230.00367609633807m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 272</div>
-        </button><button class="hotspot" slot="hotspot-39"
+        </button><button class="hotspot parking-spot" slot="hotspot-39"
             data-position="-53.809080490215166m 1.0763700008392334m -278.26993936636774m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 253</div>
-        </button><button class="hotspot" slot="hotspot-40"
+        </button><button class="hotspot parking-spot" slot="hotspot-40"
             data-position="-236.517325921816m 1.0763700008392334m -155.4722972137597m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 40</div>
-        </button><button class="hotspot" slot="hotspot-41"
+        </button><button class="hotspot parking-spot" slot="hotspot-41"
             data-position="-275.39047790670793m 1.0763700008392334m 53.65735335064582m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B1 Parking: 215</div>
-        </button><button class="hotspot" slot="hotspot-42"
+        </button><button class="hotspot parking-spot" slot="hotspot-42"
             data-position="278.0458413603284m 1.0763700008392334m 49.75486526691515m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 234</div>
-        </button><button class="hotspot" slot="hotspot-43"
+        </button><button class="hotspot parking-spot" slot="hotspot-43"
             data-position="235.07411114764085m 1.0763700008392334m -156.36988402371398m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 42</div>
-        </button><button class="hotspot" slot="hotspot-44"
+        </button><button class="hotspot parking-spot" slot="hotspot-44"
             data-position="55.124668344058904m 1.0763700008392334m -276.52700779463606m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 289</div>
-        </button><button class="hotspot" slot="hotspot-45"
+        </button><button class="hotspot parking-spot" slot="hotspot-45"
             data-position="-161.66622733064628m 1.0763700008387787m -230.64490851599498m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 286</div>
-        </button><button class="hotspot" slot="hotspot-46"
+        </button><button class="hotspot parking-spot" slot="hotspot-46"
             data-position="-276.4810799126042m 1.2056269645695465m -51.771116348743135m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 231</div>
-        </button><button class="hotspot" slot="hotspot-47"
+        </button><button class="hotspot parking-spot" slot="hotspot-47"
             data-position="-233.81404921132335m 1.0763700008392334m 154.46285026456172m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">B2 Parking: 192</div>
-        </button><button class="hotspot" slot="hotspot-48"
+        </button><button class="hotspot parking-spot" slot="hotspot-48"
             data-position="348.25750589678796m 1.0763700008396881m 228.08371790291116m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C1 Parking: 794</div>
-        </button><button class="hotspot" slot="hotspot-49"
+        </button><button class="hotspot parking-spot" slot="hotspot-49"
             data-position="409.9338923147558m 1.0763700008396881m 77.06795087414099m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 879</div>
-        </button><button class="hotspot" slot="hotspot-50"
+        </button><button class="hotspot parking-spot" slot="hotspot-50"
             data-position="406.5383279542286m 1.2056269645690918m -84.73145325156099m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C1 Parking: 824</div>
-        </button><button class="hotspot" slot="hotspot-51"
+        </button><button class="hotspot parking-spot" slot="hotspot-51"
             data-position="347.8126888523573m 1.0763700008392334m -229.80972059720102m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 952</div>
-        </button><button class="hotspot" slot="hotspot-52"
+        </button><button class="hotspot parking-spot" slot="hotspot-52"
             data-position="234.4718765253711m 1.0763700008392334m -344.72867103755397m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C1 Parking: 960</div>
-        </button><button class="hotspot" slot="hotspot-54"
+        </button><button class="hotspot parking-spot" slot="hotspot-54"
             data-position="82.21861118945742m 1.0763700008392334m -408.555784119224m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 951</div>
-        </button><button class="hotspot" slot="hotspot-55"
+        </button><button class="hotspot parking-spot" slot="hotspot-55"
             data-position="-87.71020617308204m 1.0763700008392334m -407.0460503794916m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C1 Parking: 893</div>
-        </button><button class="hotspot" slot="hotspot-56"
+        </button><button class="hotspot parking-spot" slot="hotspot-56"
             data-position="-236.53258341608415m 1.2056269645695465m -341.8431711515326m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 890</div>
-        </button><button class="hotspot" slot="hotspot-58"
+        </button><button class="hotspot parking-spot" slot="hotspot-58"
             data-position="-351.0453595118841m 1.2056269645690918m -223.25584920580658m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C1 Parking: 882</div>
-        </button><button class="hotspot" slot="hotspot-59"
+        </button><button class="hotspot parking-spot" slot="hotspot-59"
             data-position="-408.3724352337379m 1.0763700008392334m -80.02005663700695m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 873</div>
-        </button><button class="hotspot" slot="hotspot-60"
+        </button><button class="hotspot parking-spot" slot="hotspot-60"
             data-position="-343.53105822826444m 1.2056269645690918m 233.16081233021407m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">C2 Parking: 734</div>
-        </button><button class="hotspot" slot="hotspot-61"
+        </button><button class="hotspot parking-spo" slot="hotspot-61"
             data-position="-406.4866899767753m 1.0763700008392334m 90.64636277302907m" data-normal="0m 1m 0m"
             data-visibility-attribute="visible">
             <div class="annotation">Cancelled Parking area 787 MDLBeast</div>
