@@ -46,18 +46,16 @@
             /* أزلنا الـ transform اليدوي من هنا لأنه يتعارض مع المحرك */
         }
 
-        /* 2. الحل السحري: استهداف السمة التي تختفي */
+        /* 2. الحل السحري: استهداف السمة التي تختفي 
         .hotspot:not([data-visible]) {
             display: none !important;
-            /* هذا السطر سيجعل الزر يختفي كلياً فور احتجابه */
+             هذا السطر سيجعل الزر يختفي كلياً فور احتجابه 
             opacity: 0 !important;
             pointer-events: none !important;
         }
+        */
 
-.icon {
-width: 100px ;
-height: 100px;
-}
+
 
         /* 3. The Text (Annotation) */
         .annotation {
