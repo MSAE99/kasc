@@ -17,7 +17,7 @@
         }
 
         .parking-spot,
-        .security-spot {
+        .stadium-spot {
             display: block;
         }
 
@@ -26,9 +26,9 @@
             display: none;
         }
 
-        /* إظهار الكاميرات فقط عندما يكون الموديل لديه كلاس show-security */
-        #model.show-security .security-spot {
-            display: block;
+        /* إظهار الكاميرات فقط عندما يكون الموديل لديه كلاس show-stadium */
+        #model.show-stadium .stadium-spot {
+            display: none;
         }
 
         /* 1. The Dot (hotspot) */
@@ -54,7 +54,10 @@
             pointer-events: none !important;
         }
 
-
+.icon {
+width: 100px ;
+height: 100px;
+}
 
         /* 3. The Text (Annotation) */
         .annotation {
@@ -93,7 +96,7 @@
         .sidebar-controls {
             position: absolute;
             left: 15px;
-            top: 50%;
+            top: 10%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
